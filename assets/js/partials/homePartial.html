@@ -1,0 +1,113 @@
+<div class="site__home-wrapper" ng-controller="homeCtrl">
+   <section class="site__home-hero-section" quick-links>
+      <div class="site__quick-links-cont" quick-links>
+         <ul class="site__quick-links-list">
+            <li class="site__quick-links-list--item" ng-repeat="quickLink in quickLinksArr">
+               <a href="{{quickLink.Link}}" target="_blank" class="site__quick-links--link">{{quickLink.Name}}</a>
+            </li>
+         </ul>
+      </div>
+      <div class="site__home-header-cont">
+         <!-- <a href="#" class="site__quick-links-trigger">
+            <img src="siteUrl/SiteAssets/test-site-refresh-assets/assets/img/quick-links.png" alt="quick-links-img" class="site__quick-links-trigger-img">
+         </a> -->
+         <h3 class="site__home-header">
+            {{introArr[7].Title}}
+         </h3>
+         <p class="site__home-header-para">
+            {{introArr[7].Intro_x002d_Para}}
+         </p>
+      </div>
+      <a href="#" class="site__quick-links-trigger" quick-links>
+         <img src="siteUrl/SiteAssets/test-site-refresh-assets/assets/img/quick-links.png" alt="quick-links-img" class="site__quick-links-trigger-img">
+      </a>
+      <ul class="site__home-areas-list site__home-areas-list-top">
+         <li class="site__home-areas-list--item">
+            <div class="site__home-list-front-cont">
+               <h4 class="site__home-areas-list-header">{{introArr[0].Title}}</h4>
+               <p class="site__home-areas-list-para">{{introArr[0].Intro_x002d_Para}}</p>
+            </div>            
+            <div class="site__home-list-hover-cont yellow-bg">
+               <a ui-sref="site-area({siteArea: 'about-site'})" class="site__home-list-link">
+                  <h4 class="site__home-areas-list-header site__home-areas-list-hover-header">{{introArr[0].Title}}</h4>
+                  <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/Thumbnail-Hover-Icon.png" alt="plus-icon" class="site_home-hover-icon">
+               </a>    
+            </div>
+         </li>
+         <li class="site__home-areas-list--item">
+            <div class="site__home-list-front-cont">
+               <h4 class="site__home-areas-list-header">{{introArr[1].Title}}</h4>
+               <p class="site__home-areas-list-para">{{introArr[1].Intro_x002d_Para}}</p>
+            </div>            
+            <div class="site__home-list-hover-cont blue-bg">
+               <a ui-sref="teams-area({teamsArea: 'leadership-teams'})" class="site__home-list-link">
+                  <h4 class="site__home-areas-list-header site__home-areas-list-hover-header">{{introArr[1].Title}}</h4>
+                  <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/Thumbnail-Hover-Icon.png" alt="" class="site_home-hover-icon">
+               </a>               
+            </div>
+         </li>
+         <li class="site__home-areas-list--item">
+            <div class="site__home-list-front-cont">
+               <h4 class="site__home-areas-list-header">{{introArr[2].Title}}</h4>
+               <p class="site__home-areas-list-para">{{introArr[2].Intro_x002d_Para}}</p>
+            </div>            
+            <div class="site__home-list-hover-cont orange-bg">
+               <a ui-sref="teams-area({teamsArea: 'teams'})" class="site__home-list-link">
+                  <h4 class="site__home-areas-list-header site__home-areas-list-hover-header">{{introArr[2].Title}}</h4>
+                  <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/Thumbnail-Hover-Icon.png" alt="" class="site_home-hover-icon">
+               </a>               
+            </div>
+         </li>
+      </ul>
+      <ul class="site__home-areas-mobile-list">
+         <li class="site__home-areas-mobile-list--item yellow-bg"><a ui-sref="site-area({siteArea: 'about-site'})" class="site__home-areas-mobile-list--link">{{introArr[0].Title}}</a></li>
+         <li class="site__home-areas-mobile-list--item blue-bg"><a ui-sref="teams-area({teamsArea: 'leadership-teams'})" class="site__home-areas-mobile-list--link">{{introArr[1].Title}}</a></li>
+         <li class="site__home-areas-mobile-list--item orange-bg"><a ui-sref="teams-area({teamsArea: 'teams'})" class="site__home-areas-mobile-list--link">{{introArr[2].Title}}</a></li>
+         <li class="site__home-areas-mobile-list--item green-bg"><a i-sref="site-area({siteArea: 'site-communities'})" class="site__home-areas-mobile-list--link">{{introArr[3].Title}}</a></li>
+         <li class="site__home-areas-mobile-list--item pink-bg"><a ui-sref="site-area({siteArea: 'mercury-and-me'})" class="site__home-areas-mobile-list--link">{{introArr[4].Title}}</a></li>
+         <li class="site__home-areas-mobile-list--item grey-bg"><a ui-sref="site-ref-doc({refDoc: 'financial-ref-docs'})" class="site__home-areas-mobile-list--link">{{introArr[5].Title}}</a></li>
+      </ul>
+   </section>
+   <section class="site__home-bottom-section">
+      <div class="site__home-bottom-lightgrey-cont"></div>
+      <div class="site__home-bottom-darkgrey-cont"></div>
+      <ul class="site__home-areas-list site__home-areas-list-bottom">
+         <li class="site__home-areas-list--item">
+            <div class="site__home-list-front-cont">
+               <h4 class="site__home-areas-list-header">{{introArr[3].Title}}</h4>
+               <p class="site__home-areas-list-para">{{introArr[3].Intro_x002d_Para}}</p>
+            </div>            
+            <div class="site__home-list-hover-cont green-bg">
+               <a ui-sref="site-area({siteArea: 'site-communities'})" class="site__home-list-link">
+                  <h4 class="site__home-areas-list-header site__home-areas-list-hover-header">{{introArr[3].Title}}</h4>
+                  <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/Thumbnail-Hover-Icon.png" alt="" class="site_home-hover-icon">
+               </a>    
+            </div>
+         </li>
+         <li class="site__home-areas-list--item">
+            <div class="site__home-list-front-cont">
+               <h4 class="site__home-areas-list-header">{{introArr[4].Title}}</h4>
+               <p class="site__home-areas-list-para">{{introArr[4].Intro_x002d_Para}}</p>
+            </div>            
+            <div class="site__home-list-hover-cont pink-bg">
+               <a ui-sref="site-area({siteArea: 'mercury-and-me'})" class="site__home-list-link">
+                  <h4 class="site__home-areas-list-header site__home-areas-list-hover-header">{{introArr[4].Title}}</h4>
+                  <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/Thumbnail-Hover-Icon.png" alt="" class="site_home-hover-icon">
+               </a>               
+            </div>
+         </li>
+         <li class="site__home-areas-list--item">
+            <div class="site__home-list-front-cont">
+               <h4 class="site__home-areas-list-header">{{introArr[5].Title}}</h4>
+               <p class="site__home-areas-list-para">{{introArr[5].Intro_x002d_Para}}.</p>
+            </div>            
+            <div class="site__home-list-hover-cont grey-bg">
+               <a ui-sref="site-ref-doc({refDoc: 'financial-ref-docs'})" class="site__home-list-link">
+                  <h4 class="site__home-areas-list-header site__home-areas-list-hover-header">{{introArr[5].Title}}</h4>
+                  <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/Thumbnail-Hover-Icon.png" alt="" class="site_home-hover-icon">
+               </a>               
+            </div>
+         </li>
+      </ul>
+   </section>
+</div>

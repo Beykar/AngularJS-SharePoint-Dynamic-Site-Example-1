@@ -1,0 +1,65 @@
+
+#site__main-wrapper {
+	// width: 100vw;
+	background: $white;
+	font-family: EYInterstate-Regular,sans-serif;
+	@include fontSize(16px);
+	color: $eyOffBlack;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	position: relative;
+	a{
+		text-decoration: none;
+		color:inherit;
+		cursor: pointer;
+	}
+
+	.yellow-bg{
+		background-color: $eyHoverYellow;
+	}
+
+	.blue-bg{
+		background-color: $eyHoverBlue;
+	}
+
+	.orange-bg, .no-bg{
+		background-color: $eyHoverOrange;
+	}
+
+	.green-bg{
+		background-color: $eyHoverGreen;
+	}
+	
+	.pink-bg{
+		background-color: $eyHoverPink;
+	}
+
+	.grey-bg{
+		background-color: $eyHoverGrey;
+	}
+
+	/* scrollbar */
+
+	  /* width */
+	::-webkit-scrollbar {
+		width: 7px;
+	}
+  
+	/* Track */
+	::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 5px grey; 
+		border-radius: 10px;
+	}
+   
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background:$eyPrimaryGray; 
+		border-radius: 10px;
+	} 
+  
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: $eyPrimaryGray; 
+	}
+}

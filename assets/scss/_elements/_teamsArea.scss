@@ -1,0 +1,383 @@
+.teams__area-wrapper{
+
+    .teams__area-hero-section{
+        position: relative;
+        background-image: url(https://sites.ey.com/sites/UKIsite/SiteAssets/site-refresh-assets/assets/img/about-site-hero.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; 
+        height: 13rem; 
+        width: 100%;
+
+        @include mq($from: desktop){
+            height: 24rem;
+        }
+    }
+
+    .teams__area-hero-heading-cont{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 19rem;        
+        height: 8rem;        
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+
+        @include mq($from: desktop){
+            height: 11rem;
+            padding: 0 2.5rem;
+        }
+    }
+
+    .teams__area-hero-header{
+        font-family: EYInterstate-Light, sans-serif;
+        width: 90%;
+        margin: auto;
+    }
+
+    .teams__area-home-link{ 
+        display: none;
+
+        @include mq($from : desktop){
+            position: absolute;
+            left: 0; 
+            bottom: 0;
+            width: 160px; 
+            height: 33px;
+            display: flex;
+    
+            &:hover{    
+               
+                .teams__area-home-link-para{
+                    animation: animateHomePara 1s;
+                    animation-timing-function: ease-in;
+                    animation-fill-mode: forwards;
+                }
+    
+                // .teams__area-home-icon{
+                //     background-color: $eyHoverOrange;
+                // }
+            } 
+        }        
+    }
+    
+    .teams__area-home-icon{
+        position: absolute;
+        bottom: 0;
+        z-index: 30;
+        width: 37px;
+        background-color: $white;
+        transition: 2s;
+    } 
+
+    .teams__area-home-link-para{
+        opacity: 0;
+        width: 0;
+        height: 0;
+        background-color: $eyOffBlack;
+        color: $white;
+        padding: 10px 20px 40px 50px;
+        // transition: .6s;
+    }
+
+    @keyframes animateHomePara {
+        0%{
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        50%{
+            opacity: 0; 
+            width: 160px;
+            height: 16px;
+        }
+
+        100%{
+            opacity: 1;
+            width: 160px;
+            height: 33px;
+        }
+    }
+
+    .teams__area-tab-section{
+        width: 100%;
+        display: block;
+
+        @include mq($from: tablet){
+            display: flex;
+        }
+    }
+
+    .teams__area-tab-section-mobile{
+        display: block;
+        width: 100%;
+        margin: auto;
+
+        @include mq($from: desktop){
+            display: none;
+        }
+    }
+
+    .teams__area-tab-section-desktop{
+        display: none;
+
+        @include mq($from: desktop){
+            display: flex;
+            width: 100%;
+            min-height: 60rem;
+        }
+    }
+
+    .teams__area-accordion-card{
+        border: none;
+    }
+
+    .teams__area-card-header{
+        background-color: $eyOffWhite;
+        border-bottom: 1px solid $eySharkGrey;
+    }
+
+    .site__are-accordion-card-body{
+        font-family: EYInterstate-light, sans-serif;
+        padding: 1.5rem 2rem;
+    }
+
+    .site_area-accordion-link{
+        color: $eySharkGrey !important;
+        @include fontSize(20px);
+        font-family: EYInterstate-Bold, sans-serif;
+
+        @include mq($from: desktop){
+            font-family: EYInterstate-Regular, sans-serif;
+        }
+    }
+
+    .teams__area-tab-left-cont{
+        flex-basis: 100%;
+        background-color: $eyPrimaryGray;
+
+        @include mq($from: tablet){
+            // flex-basis: 25%;
+            width: 19rem;
+            flex-basis: 19rem;
+            min-height: 31rem;
+        }   
+    }
+
+    .teams__area-leftcol-header-cont{
+        background-color: $eyOffWhite;
+        color: $eySharkGrey;
+        padding: 2rem 2rem .5rem 2rem;
+
+        &:first-child{
+            display: none; 
+        }
+
+
+        @include mq($from: desktop){
+            &:first-child{
+                display: block;
+            }
+            padding: .5rem 2.5rem .5rem 2.5rem;
+        }
+
+        &:last-child{
+            padding-bottom: 3rem;
+            .teams__area-left-col-header{
+                border-bottom: 1px solid $eySharkGrey; 
+            }
+        }
+        
+        
+    }
+
+    .teams__area-left-col-header{       
+        margin-bottom: 0;
+        padding-bottom: .5rem;
+
+        &:not(:first-child){
+            border-bottom: 1px solid $eySharkGrey; 
+        }
+
+        .teams__area-header-link{
+            cursor: unset;
+            font-size: 20px !important;
+            font-family: EYInterstate-Bold, sans-serif !important;
+        }
+    }
+
+    .teams__area-tab-list{
+        display: block;
+        background-color: $eyOffWhite;
+        padding: 1rem 2.5rem 0rem 2.5rem;
+        &--item{
+            color: $eySharkGrey !important;
+            font-family: EYInterstate-Light, sans-serif;
+            padding-bottom: .5rem;
+            &:not(:first-child){
+                padding-top: .5rem;
+            } 
+            &:not(:last-child){
+                border-bottom: 1px solid $eySharkGrey;
+            }
+        } 
+    }
+
+    .teams__area-tab-link{
+        width: 100%;
+        padding: 0;
+        @include fontSize(18px);
+        transition: .6s;
+
+        &:hover{
+            font-size: 20px !important;
+            font-family: EYInterstate-Bold, sans-serif !important;
+        }
+    } 
+
+    .teams__area-tab-content{
+        flex-basis: 100%;
+        background-color: $white;
+        padding: 2rem 0;
+        text-align: justify;
+
+        @include mq($from: tablet){
+            flex-basis: 77%;
+            // width: 75vw;
+            position: relative;
+            
+        }
+    }
+
+    .slide-left{
+        animation: slideLeft .7s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+    }
+  
+
+    @keyframes slideLeft {
+        0%{
+            opacity: 0;
+            right: -100%;
+        }
+
+        100%{
+            opacity: 1;
+            right: 0;
+        }    
+    }
+
+    .teams__area-tap-pane-para{
+        font-family: EYInterstate-Light, sans-serif;
+        padding: 0rem 2.5rem;
+    }
+
+    .teams__area-tab-pane-header{
+        padding: 0 2.5rem;
+        // margin-bottom: 1.5rem;
+        color: $eyOffBlack;
+    }
+
+    .teams__area-team-links{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;        
+        margin-bottom: 2rem;
+
+        @include mq($from: tablet){
+            padding: 0 2.5rem;
+        }
+    }
+
+    .teams__area-team-link-cont{
+        position: relative;
+        padding: 20px 15px;
+        margin: .3rem 0;
+    }
+
+    .teams__area-team-link{
+        @include fontSize(18px);
+        font-family: EYInterstate-Regular, sans-serif;
+        flex-basis: 100%;
+
+        @include mq(tablet){
+            flex-basis: 47%;
+        }
+    }
+
+    .teams__area-team-link-icon{
+        position: absolute;
+        right: 15px;
+        top: 13px;
+        width: 40px;
+    }
+
+    .teams__area-document-repo-section{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2.5rem 0;
+    }
+    
+    .teams__area-resources-cont{
+        flex-basis: 100%;
+        background-color: $eyOrangeOpac6;
+        padding: 1.5rem 2rem;
+
+        @include mq($from: tablet){
+            flex-basis: 50%;
+
+            //IE
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                flex-basis: 42.5%;
+            }
+           
+        }
+    }
+
+    .teams__area-monthend-cont{
+        flex-basis: 100%;
+        background-color: $eyOrangeOpac3;
+        padding: 1.5rem 2rem;
+
+        @include mq($from: tablet){
+            flex-basis: 50%;
+
+             //IE
+             @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                flex-basis: 42.5%;
+            }
+        }
+    }
+
+    .teams__area-policies-cont{
+        background-color: $eyOrangePale;
+        flex-basis: 100%;
+        padding: 1.5rem 2rem;
+    }
+
+    .teams__area-doc-repo-list-title{
+        @include fontSize(20px);
+        font-family: EYInterstate-Light, sans-serif;
+        color: $eyOffBlack;
+    }
+
+    .teams__area-doc-repo-intro{
+        font-family: EYInterstate-Light, sans-serif;
+    }
+
+    .teams__area-doc-repo-list{
+        padding: 0;
+        list-style: none;
+
+        &--item{
+            font-family: EYInterstate-Light, sans-serif;
+            padding: .4rem 0;
+            border-bottom: 1px solid $eySharkGrey;
+        }
+    }
+}
+
+        

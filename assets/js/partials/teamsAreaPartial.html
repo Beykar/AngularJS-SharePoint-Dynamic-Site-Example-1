@@ -1,0 +1,122 @@
+<div class="teams__area-wrapper" ng-controller="teamsAreaCtrl">
+    <section class="teams__area-hero-section" ng-style="{'background-image': 'url(' + pageData.Page_x002d_Hero_x002d_Banner.Url + ')'}">
+        <div class="teams__area-hero-heading-cont" ng-class="pageData.Colour_x002d_Background">
+            <h3 class="teams__area-hero-header">{{pageData.Title}}</h3>
+        </div>
+        <a ui-sref="home" class="teams__area-home-link" data-bg="{{pageData.Colour_x002d_Background}}" icon-hover>
+                <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/Home-Button.svg" alt="home-icon" class="teams__area-home-icon" >        
+                <p class="teams__area-home-link-para">Home page</p>
+        </a>
+    </section>
+    <section class="teams__area-tab-section">
+        <div class="teams__area-tab-section-mobile">
+            <div class="teams__area-leftcol-header-cont">
+              <h3 class="teams__area-left-col-header"><a href="" class="teams__area-header-link" >Our Teams</a></h3>
+            </div>    
+            <div class="accordion" id="siteTabAccordion">
+                <div class="card teams__area-accordion-card" ng-repeat="tabContent in tabContentArr">
+                  <div class="card-header teams__area-card-header" id="heading{{tabContent.ID}}">
+                    <h3 class="mb-0 teams__area-accordion-header">
+                      <a class="btn btn-link btn-block text-left site_area-accordion-link" type="button" data-toggle="collapse" data-target="#collapse{{tabContent.ID}}" aria-expanded="true" aria-controls="collapse{{tabContent.ID}}">
+                        {{tabContent.Title}}
+                      </a>
+                    </h3>
+                  </div>              
+                  <div id="collapse{{tabContent.ID}}" class="collapse show" aria-labelledby="heading{{tabContent.ID}}" data-parent="#siteTabAccordion">
+                    <div class="card-body site__are-accordion-card-body">
+                      <div ng-bind-html="tabContent.Description"></div>
+                      <div class="teams__area-team-links">
+                        <a href="{{teamChart.TeamsChartUrl}}" target="_blank" class="teams__area-team-link" ng-repeat="teamChart in tabContent.teamsChartArr">
+                        <div class="teams__area-team-link-cont" ng-class="pageData.Colour_x002d_Background">
+                        {{teamChart.Title}}                    
+                          <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/Thumbnail-Hover-Icon.png" alt="Plus Icon" class="teams__area-team-link-icon">
+                        </div>
+                        </a>
+                      </div> 
+                      <div class="teams__area-document-repo-section" ng-if="teamsArea == 'teams' && tabContent.teamsDocsArr.length > 0">
+                          <div class="teams__area-resources-cont" ng-if="resources.length > 0">
+                            <h4 class="teams__area-doc-repo-list-title">Tools and resources</h4>
+                            <p class="teams__area-doc-repo-header">Name</p>
+                            <ul class="teams__area-doc-repo-list">
+                              <li class="teams__area-doc-repo-list--item" ng-repeat="resourceDoc in tabContent.teamsDocsArr | filter : {'DocType' : 'tools-resources'}"><a href="{{resourceDoc.TeamsDocUrl}}" target="_blank" class="teams__area-doc-repo-list--link">{{resourceDoc.Title}}</a></li>
+                            </ul>
+                          </div>
+                          <div class="teams__area-monthend-cont" ng-if="monthend.length > 0">
+                            <h4 class="teams__area-doc-repo-list-title">Month end close</h4>
+                            <p class="teams__area-doc-repo-header">Name</p>
+                            <ul class="teams__area-doc-repo-list">
+                              <li class="teams__area-doc-repo-list--item" ng-repeat="monthEndDoc in tabContent.teamsDocsArr | filter : {'DocType' : 'month-end-close'}"><a href="{{monthEndDoc.TeamsDocUrl}}" target="_blank" class="teams__area-doc-repo-list--link">{{monthEndDoc.Title}}</a></li>
+                            </ul>
+                          </div>
+                          <div class="teams__area-policies-cont" ng-if="policies.length > 0">
+                            <h4 class="teams__area-doc-repo-list-title">Policies</h4>
+                            <p class="teams__area-doc-repo-intro">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit vitae voluptatem incidunt officia eum tempora asperiores accusamus beatae aliquid dolores?</p>
+                            <p class="teams__area-doc-repo-header">Name</p>
+                            <ul class="teams__area-doc-repo-list">
+                              <li class="teams__area-doc-repo-list--item" ng-repeat="policyDoc in tabContent.teamsDocsArr | filter : {'DocType' : 'policies'}"><a href="{{policyDoc.TeamsDocUrl}}" target="_blank" class="teams__area-doc-repo-list--link">{{policyDoc.Title}}</a></li>
+                            </ul>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="teams__area-leftcol-header-cont" ng-if="teamsArea == 'teams'">
+              <h3 class="teams__area-left-col-header"><a ui-sref="site-area({siteArea: 'specialisms'})" class= "teams__area-tab-link" >Our Specialisms</a></h3>  
+            </div>  
+        </div>
+        <div class="teams__area-tab-section-desktop">
+            <div class="teams__area-tab-left-cont" show-pane>
+                <div class="teams__area-leftcol-header-cont">
+                  <h3 class="teams__area-left-col-header"><a href="" class="teams__area-header-link" >Our Teams</a></h3>
+                </div>                
+                <ul class="nav teams__area-tab-list" role="tab-list" tab-clicked>  
+                    <li class="nav-item teams__area-tab-list--item" ng-repeat="tabContent in tabContentArr">
+                        <a href="#tab-content-{{tabContent.ID}}" class="teams__area-tab-link teams__tab nav-link active" data-toggle="tab">{{tabContent.Title}}</a>
+                    </li>
+                </ul>
+                <div class="teams__area-leftcol-header-cont" ng-if="teamsArea == 'teams'">
+                      <h3 class="teams__area-left-col-header"><a ui-sref="site-area({siteArea: 'specialisms'})" class= "teams__area-tab-link" >Our Specialisms</a></h3>  
+                </div>                             
+            </div>           
+            <div id="site-tab-content" class="teams__area-tab-content tab-content slide-left">
+              <div class="teams__area-tab-pane tab-pane fade show" ng-repeat="tabContent in tabContentArr" id="tab-content-{{tabContent.ID}}" show-pane>
+                  <h3 class="teams__area-tab-pane-header">{{tabContent.Title}}</h3>
+                  <div class="teams__area-tap-pane-para" ng-bind-html="tabContent.Description"></div>
+                  <div class="teams__area-team-links">
+                      <a href="{{teamChart.TeamsChartUrl}}" target="_blank" class="teams__area-team-link" ng-repeat="teamChart in tabContent.teamsChartArr">
+                        <div class="teams__area-team-link-cont" ng-class="pageData.Colour_x002d_Background">
+                        {{teamChart.Title}}                    
+                          <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/Thumbnail-Hover-Icon.png" alt="Plus Icon" class="teams__area-team-link-icon">
+                        </div>
+                      </a>
+                  </div>                  
+                  <div class="teams__area-document-repo-section" ng-if="teamsArea == 'teams'">
+                      <div class="teams__area-resources-cont" ng-if="tabContent.resources == true">
+                        <h4 class="teams__area-doc-repo-list-title">Tools and resources</h4>
+                        <p class="teams__area-doc-repo-header">Name</p>
+                        <ul class="teams__area-doc-repo-list" ng-if="resourceDoc != ''">
+                          <li class="teams__area-doc-repo-list--item" ng-repeat="resourceDoc in tabContent.teamsDocsArr | filter : {'DocType' : 'tools-resources'}"><a href="{{resourceDoc.TeamsDocUrl}}" target="_blank" class="teams__area-doc-repo-list--link">{{resourceDoc.Title}}</a></li>
+                        </ul>
+                      </div>
+                      <div class="teams__area-monthend-cont" ng-if="tabContent.monthend == true">
+                        <h4 class="teams__area-doc-repo-list-title">Month end close</h4>
+                        <p class="teams__area-doc-repo-header">Name</p>
+                        <ul class="teams__area-doc-repo-list">
+                          <li class="teams__area-doc-repo-list--item" ng-repeat="monthEndDoc in tabContent.teamsDocsArr | filter : {'DocType' : 'month-end-close'}"><a href="{{monthEndDoc.TeamsDocUrl}}" target="_blank" class="teams__area-doc-repo-list--link">{{monthEndDoc.Title}}</a></li>
+                        </ul>
+                      </div>
+                      <div class="teams__area-policies-cont" ng-if="tabContent.policies == true">
+                        <h4 class="teams__area-doc-repo-list-title">Policies</h4>
+                        <!-- <p class="teams__area-doc-repo-intro">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit vitae voluptatem incidunt officia eum tempora asperiores accusamus beatae aliquid dolores?</p> -->
+                        <p class="teams__area-doc-repo-header">Name</p>
+                        <ul class="teams__area-doc-repo-list">
+                          <li class="teams__area-doc-repo-list--item" ng-repeat="policyDoc in tabContent.teamsDocsArr | filter : {'DocType' : 'policies'}"><a href="{{policyDoc.TeamsDocUrl}}" target="_blank" class="teams__area-doc-repo-list--link">{{policyDoc.Title}}</a></li>
+                        </ul>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>         
+    </section>
+</div>

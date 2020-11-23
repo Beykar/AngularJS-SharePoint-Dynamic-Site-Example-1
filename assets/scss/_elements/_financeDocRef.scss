@@ -1,0 +1,397 @@
+.site-doc__area-wrapper{
+
+    .site-doc__area-hero-section{
+        position: relative;
+        // background-image: url(https://sites.ey.com/sites/UKIsite/SiteAssets/site-refresh-assets/assets/img/about-site-hero.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; 
+        height: 13rem; 
+        width: 100%;
+
+        @include mq($from: desktop){
+            height: 24rem;
+        }
+    }
+
+    .site-doc__area-hero-heading-cont{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 19rem;        
+        height: 8rem;        
+        padding: 0 2rem;
+        display: flex;
+        align-items:center;
+
+        @include mq($from: desktop){
+            height: 11rem;
+            padding: 0 2.5rem;
+        }
+    }
+
+    .site-doc__area-hero-header{
+        font-family: EYInterstate-Light, sans-serif;
+        width: 90%;
+        margin: auto;
+    }
+
+    .site-doc__area-home-link{ 
+        display: none;
+
+        @include mq($from : desktop){
+            position: absolute;
+            left: 0; 
+            bottom: 0;
+            width: 160px; 
+            height: 33px;
+            display: flex;
+    
+            &:hover{    
+               
+                .site-doc__area-home-link-para{
+                    animation: animateHomePara 1s;
+                    animation-timing-function: ease-in;
+                    animation-fill-mode: forwards;
+                }
+    
+                // .site-doc__area-home-icon{
+                //     background-color: $eyHoverGrey;
+                // }
+            } 
+        }        
+    }
+    
+    .site-doc__area-home-icon{
+        position: absolute;
+        bottom: 0;
+        z-index: 30;
+        width: 37px;
+        background-color: $white;
+        transition: 2s;
+    } 
+
+    .site-doc__area-home-link-para{
+        opacity: 0;
+        width: 0;
+        height: 0;
+        background-color: $eyOffBlack;
+        color: $white;
+        padding: 10px 20px 40px 50px;
+        // transition: .6s;
+    }
+
+    @keyframes animateHomePara {
+        0%{
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        50%{
+            opacity: 0; 
+            width: 160px;
+            height: 16px;
+        }
+
+        100%{
+            opacity: 1;
+            width: 160px;
+            height: 33px;
+        }
+    }
+
+    .site-doc__area-tab-section{
+        width: 100%;
+        display: block;
+
+        @include mq($from: tablet){
+            display: flex;
+        }
+    }
+
+    .site-doc__area-tab-section-mobile{
+        display: block;
+        width: 100%;
+        margin: auto;
+
+        @include mq($from: desktop){
+            display: none;
+        }
+    }
+
+    .site-doc__area-tab-section-desktop{
+        display: none;
+
+        @include mq($from: desktop){
+            display: flex;
+            width:100%;
+        }
+    }
+
+    .site-doc__area-accordion-card{
+        border: none;
+    }
+
+    .site-doc__area-card-header{
+        background-color: $eyOffWhite;
+        border-bottom: 1px solid $eySharkGrey;
+    }
+
+    .site-doc__are-accordion-card-body{
+        font-family: EYInterstate-light, sans-serif;
+        padding: 1.5rem 2rem;
+    }
+
+    .site_area-accordion-link{
+        color: $eySharkGrey !important;
+        @include fontSize(20px);
+        font-family: EYInterstate-Regular, sans-serif;
+    }
+
+    .site-doc__area-tab-left-cont{
+        flex-basis: 100%;
+        background-color: $eyPrimaryGray;
+
+        @include mq($from: tablet){
+            // flex-basis: 25%;
+            width: 19rem;
+            flex-basis: 19rem;
+            min-height: 60rem;
+        }   
+    }
+
+    .site-doc__area-tab-list{
+        display: block;
+        background-color: $eyOffWhite;
+        padding: 3rem 2.5rem 8rem 2.5rem;
+        &--item{
+            color: $eySharkGrey !important;
+            font-family: EYInterstate-Light, sans-serif;
+            padding-bottom: .5rem;
+            &:not(:first-child){
+                padding-top: .5rem;
+            } 
+            &:not(:last-child){
+                border-bottom: 1px solid $eySharkGrey;
+            }
+        } 
+    }
+
+    .site-doc__area-tab-link{
+        width: 100%;
+        padding: 0;
+        @include fontSize(18px);
+        transition: .6s;
+
+        &:hover{
+            font-size: 20px !important;
+            font-family: EYInterstate-Bold, sans-serif !important;
+        }
+    } 
+
+    .site-doc__area-tab-content{
+        flex-basis: 100%;
+        background-color: $white;
+        padding: 2rem 0;
+        text-align: justify;
+
+        @include mq($from: tablet){
+            flex-basis: 75%;
+            width: 75vw;
+            position: relative;
+        }
+    }
+
+    
+
+    .tab-content > .site-doc__area-tab-pane {
+        // padding-right: 4rem;
+        position: absolute;
+        // width: 95%;
+    }
+
+    .slide-left{
+        animation: slideLeft .7s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+    }
+  
+
+    @keyframes slideLeft {
+        0%{
+            opacity: 0;
+            right: -100%;
+        }
+
+        100%{
+            opacity: 1;
+            right: 0;
+        }    
+    }
+
+
+    // .tab-content > .site-doc__area-tab-pane.active {
+    //     opacity: 0;
+    //     right: -100%;
+    //     animation: slideLeft .9s;
+    //     animation-fill-mode: forwards;
+    // }
+
+    // @keyframes slideLeft {
+    //     0%{
+    //         opacity: 0;
+    //         right: -100%;
+    //     }
+
+    //     100%{
+    //         opacity: 1;
+    //         right: 0;
+    //     }    
+    // }
+
+    .site-doc__area-tab-pane-header{
+        margin-bottom: 1.5rem;
+        padding: 0 2.5rem;
+        color: $eyOffBlack;
+    }
+
+    .site-doc__area-tap-pane-para{
+        font-family: EYInterstate-Light, sans-serif;
+        padding: 0 4rem 0 2.5rem;
+        
+    }
+
+    .site-doc__area-leftcol-header-cont{
+        background-color: $eyOffWhite;
+        color: $eySharkGrey;
+        padding: 2rem 2rem .5rem 2rem;
+        @include fontSize(20px);
+    
+        @include mq($from: desktop){
+            padding: 2rem 2.5rem 24rem 2.5rem;
+        }   
+        
+    }
+    
+    .site-doc__area-left-col-header{       
+        margin-bottom: 0;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid $eySharkGrey;
+    
+        .site-doc__area-header-link{
+            cursor: unset;
+            font-size: 20px !important;
+            font-family: EYInterstate-Bold, sans-serif !important;
+        }
+    }
+
+    .site-doc__repo-cont{
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 3rem 0;
+        background-color: $eyPaleGrey;
+        padding: 2rem 2.5rem;
+    }
+
+    .site-doc__list-cont{
+        flex-basis: 100%;
+    }
+
+    .site-doc__area-doc-repo-list-title{
+        @include fontSize(20px);
+        font-family: EYInterstate-Light, sans-serif;
+        color: $eyOffBlack;
+    }
+
+    .site-doc__repo-list{
+        padding: 0;
+        list-style: none;
+
+        &--item{
+            font-family: EYInterstate-Light, sans-serif;
+            padding-top: .3rem;
+            border-bottom: 1px solid $eySharkGrey;
+            display: flex;
+        }
+ 
+        &--link{
+            &:hover{
+                font-family: EYInterstate-Regular, sans-serif;
+            }
+        }
+
+        .site-doc__repo-list--link, .site-doc__repo-list--description{
+            flex-basis: 50%;
+        }
+    }
+
+    .site-doc__list-title{
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 1rem;
+
+        span{
+            flex-basis: 50%;
+        }
+    }
+
+    .site-doc__area-popup{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $eyOffBlackOpac;
+        width: 100%;
+        height: 150%;
+        overflow: scroll;
+        z-index: 50;
+        display: none;
+
+        @include mq($from: desktop){
+            left: 15px;
+        }
+    }
+
+    .site-doc__area-popup-close-cont{
+        position: relative;
+        height: 5rem;
+    }
+
+    .site-doc__popup-close-icon{
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        width: 31px;
+        cursor: pointer; 
+    }
+
+    .site-doc__popup-main-cont{
+        padding: 2rem;
+        font-family: EYInterstate-Light, sans-serif;
+        color: $white !important;
+
+        @include mq($from: desktop){
+            padding: 2rem 4rem;
+        }
+
+        div, p, p span, span{
+            color: $white !important;
+            @include fontSize(16px); 
+        }
+
+        a, a span{
+            color: $eyYellow !important;
+            text-decoration: underline !important;
+        }
+    }
+    
+    .site-doc__popup-title{
+        margin-bottom: 3rem;
+    }
+}
+
+
+        
+
+

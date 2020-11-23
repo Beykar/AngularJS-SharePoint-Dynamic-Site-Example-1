@@ -1,0 +1,123 @@
+<div class="site-doc__area-wrapper" ng-controller="siteRefCtrl">
+    <section class="site-doc__area-hero-section" ng-style="{'background-image': 'url(' + pageData.Page_x002d_Hero_x002d_Banner.Url + ')'}">
+        <div class="site-doc__area-hero-heading-cont" ng-class="pageData.Colour_x002d_Background">
+            <h3 class="site-doc__area-hero-header">{{pageData.Title}}</h3>
+        </div>
+        <a ui-sref="home" class="site-doc__area-home-link" data-bg="{{pageData.Colour_x002d_Background}}" icon-hover>
+                <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/Home-Button.svg" alt="home-icon" class="site-doc__area-home-icon">           
+                <p class="site-doc__area-home-link-para">Home page</p>
+        </a>
+    </section>
+    <section class="site-doc__area-tab-section">
+        <div class="site-doc__area-tab-section-mobile">
+            <div class="accordion" id="siteTabAccordion">
+                <div class="card site-doc__area-accordion-card">
+                  <div class="card-header site-doc__area-card-header" id="headingOne">
+                    <h3 class="mb-0 site-doc__area-accordion-header">
+                      <a class="btn btn-link btn-block text-left site_area-accordion-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        site Reference Documents
+                      </a>
+                    </h3>
+                  </div>              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#siteTabAccordion">
+                    <div class="card-body site__are-accordion-card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+
+                      <div class="site-doc__repo-cont">
+                        <div class="site-doc__list-cont">
+                          <div class="site-doc__list-title">
+                            <span>Name</span>
+                            <span>Description</span>
+                          </div>
+                          <ul class="site-doc__repo-list">
+                            <li class="site-doc__repo-list--item" ng-repeat="refDoc in siteRefDocArr">
+                              <a href="" class="site-doc__repo-list--link" ng-click="getPopupInfo(refDoc.ID)">{{refDoc.Title}}</a>
+                              <p class="site-doc__repo-list--description">{{refDoc.Description}}</p>
+                            </li>
+                            <!-- <li class="site-doc__repo-list--item">
+                              <a href="" class="site-doc__repo-list--link">Document title</a>
+                              <p class="site-doc__repo-list--description">Document description</p>
+                            </li>
+                            <li class="site-doc__repo-list--item">
+                              <a href="" class="site-doc__repo-list--link">Document title</a>
+                              <p class="site-doc__repo-list--description">Document description</p>
+                            </li>
+                            <li class="site-doc__repo-list--item">
+                              <a href="" class="site-doc__repo-list--link">Document title</a>
+                              <p class="site-doc__repo-list--description">Document description</p>
+                            </li>
+                            <li class="site-doc__repo-list--item">
+                              <a href="" class="site-doc__repo-list--link">Document title</a>
+                              <p class="site-doc__repo-list--description">Document description</p>
+                            </li>
+                            <li class="site-doc__repo-list--item">
+                              <a href="" class="site-doc__repo-list--link">Document title</a>
+                              <p class="site-doc__repo-list--description">Document description</p>
+                            </li>                      -->
+                          </ul>
+                        </div>                      
+                      </div>
+                      <div class="site-doc__area-popup" popup>
+                        <div class="site-doc__area-popup-close-cont">
+                          <a href="" class="site-doc__area-popup-link">
+                            <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/close-icon.png" alt="Close Icon" class="site-doc__popup-close-icon">
+                          </a>                
+                        </div>
+                        <div class="site-doc__popup-main-cont">
+                            <h3 class="site-doc__popup-title">{{popupInfo.Title}}</h3>
+                            <div class="site-doc__popup-content" ng-bind-html="popupInfo.MainContent">
+                                <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni voluptate animi quo a doloremque minus fugit illum nobis molestiae quod. Repellendus, numquam. Culpa laboriosam dolores velit voluptates voluptatum, impedit voluptatem deleniti ad reprehenderit nam vero omnis molestiae? Aut ullam possimus distinctio architecto, quo pariatur amet odit. Sit excepturi maiores sed! Accusantium tempore ipsam blanditiis iste nihil tempora odit, laudantium nisi dolorum numquam voluptatem debitis quo eaque. Impedit dolores tempora officiis obcaecati, qui ullam ut porro. Officia, ipsam eius. Sapiente magni est hic nam optio, dolore itaque eaque deserunt reiciendis at, aspernatur ad impedit sit. Qui eum nulla commodi unde obcaecati! -->
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-doc__area-tab-section-desktop">
+            <div class="site-doc__area-tab-left-cont"> 
+                <!-- <ul class="nav site-doc__area-tab-list" role="tab-list" clicked>  
+                    <li class="nav-item site-doc__area-tab-list--item">
+                        <a href="#documents" class="site-doc__area-tab-link nav-link active" data-toggle="tab">Documents</a>
+                    </li>
+                </ul>                -->
+                <div class="site-doc__area-leftcol-header-cont">
+                  <h3 class="site-doc__area-left-col-header"><a href="" class="site-doc__area-header-link" >Documents</a></h3>
+                </div>    
+              </div>           
+            <div id="site-tab-content" class="site-doc__area-tab-content tab-content">
+            <div class="site-doc__area-tab-pane tab-pane fade show" id="documents" show-pane>
+                <h3 class="site-doc__area-tab-pane-header">{{tabContentArr.Title}}</h3>
+                <div class="site-doc__area-tap-pane-para" ng-bind-html="tabContentArr.Description"></div>
+                <div class="site-doc__repo-cont">
+                  <div class="site-doc__list-cont">
+                    <div class="site-doc__list-title">
+                      <span>Name</span>
+                      <span>Description</span>
+                    </div>
+                    <ul class="site-doc__repo-list">
+                      <li class="site-doc__repo-list--item" ng-repeat="refDoc in siteRefDocArr">
+                        <a href="" class="site-doc__repo-list--link" ng-click="getPopupInfo(refDoc.ID)" popup>{{refDoc.Title}}</a>
+                        <p class="site-doc__repo-list--description">{{refDoc.Description}}</p>
+                      </li>  
+                    </ul>
+                  </div>                
+                </div>
+            </div>
+            <div class="site-doc__area-popup" popup>
+              <div class="site-doc__area-popup-close-cont">
+                <a href="" class="site-doc__area-popup-link">
+                  <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/close-icon.png" alt="Close Icon" class="site-doc__popup-close-icon">
+                </a>                
+              </div>
+              <div class="site-doc__popup-main-cont">
+                  <h3 class="site-doc__popup-title">{{popupInfo.Title}}</h3>
+                  <div class="site-doc__popup-content" ng-bind-html="popupInfo.MainContent">
+                  </div>
+              </div>
+            </div>
+            </div>
+        </div>         
+    </section>
+</div>

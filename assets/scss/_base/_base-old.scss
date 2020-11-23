@@ -1,0 +1,361 @@
+
+#tipMainWrapper {
+	width: 100%;
+	background: $white;
+	font-family: EYInterstate-Regular,sans-serif;
+	@include fontSize(16px);
+	color: $eyOffBlack;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	position: relative;
+
+	//Edge only 
+	@supports (-ms-ime-align:auto) {
+		@include fontSize(20px);
+	}
+
+	a{
+		text-decoration: none;
+		color:inherit;
+		cursor: pointer;
+	}
+
+	.tip__ssl-item{
+		&--main{
+			background-color: $eyGrayLight;
+			color:$eyOffBlack;
+		}
+		&--td{
+			background-color:$eyPrimaryPurple;
+		}
+		&--r{
+			background-color:$eyPrimaryOrange;
+		}
+		&--vme{
+			background-color:$eyPrimaryGreen;
+		}
+		&--ots{
+			background-color:$eyPrimaryCyan;
+		}
+		&--eyp{
+			background-color:$eyPrimaryBlue;
+		}
+		&--cf{
+			background-color:$eyPrimaryPurpleDark; 
+		}
+	}	
+
+	.tip__tasx-intro-section{
+		font-family: EYInterstate-Light, sans-serif;
+		// min-height: 22vh;
+		flex-basis:100%;
+		margin: 3% 0;
+		padding:0 4%;
+
+		//Edge only 
+		@supports (-ms-ime-align:auto) {
+			padding: 1% 2.5%;
+			@include fontSize(20px);
+
+			@include mq($from:desktop, $until: desktopWide){
+				@include fontSize(16px);
+			}
+
+			@include mq($from: desktopXL){
+				@include fontSize(24px);
+			}
+		}
+
+		&--para{
+			//Edge only
+			@supports (-ms-ime-align:auto) {
+				margin: 1% 0;
+			}
+		}
+	}
+
+	.clicked{
+        background-color: $eyOffBlack;
+        color: $white !important;
+	}
+	
+	.tip__tasx-tool-card-list{
+       
+        list-style: none;
+        padding: 0;
+        display: flex; 
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        &--item{
+            position: relative;
+            background-color: transparent;
+            color: $eyOffBlack !important;
+            flex-basis: 85%;
+            border: 1px solid $eyGrayDark;
+            border-radius: 5px;
+            padding: 2%;
+            margin: auto;
+            margin-bottom: 2%;
+            transition: .5s ease;
+
+            @include mq($from: tablet){
+                flex-basis: 48%;
+                height: 8rem;
+                margin-bottom: 2%;
+            }
+            
+            //Edge only 
+            @supports (-ms-ime-align:auto) {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                // height: 10rem;
+
+                @include mq($from: tablet){
+                    // height: 9rem;
+                }
+
+                @include mq($from: desktopXL){
+                    // padding:2rem; 
+                    // height: 11rem;                   
+                }
+            }
+
+            //IE only
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                @include mq($from: tablet){
+                    flex-basis:41%;       
+                }
+            }
+
+            &:hover{
+                cursor: pointer;
+                background-color: $eyOffBlack;
+                color:$eyYellow !important;
+            }
+        }
+       
+        &--link{
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        &--img-cont{
+            // margin-right:5%;
+            
+            //Edge only 
+            @supports (-ms-ime-align:auto) {
+                margin-right:5%;
+            }
+
+             //IE only
+             @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                flex-basis: 37%;
+                // margin-right:5%;
+
+                @include mq($from: desktop, $until: desktopWide){
+                    margin-right: 20%;
+                }
+            }
+        }
+
+        &--img{
+           border: 1px solid $eyGrayDark;
+        //    width: 86%;
+
+        //    @include mq($from: desktopXL){
+        //        width:77%;
+        //        margin-top: -12%;
+        //    }
+ 
+        //     //IE only
+        //     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        //         @include mq($from: desktopMid, $until: desktopWide){
+        //             width: 100%;
+        //         }                
+        //     }
+
+        //     //Edge only 
+        //     @supports (-ms-ime-align:auto) {
+        //         @include mq($from: tablet){
+        //             width: 100%;
+        //             margin-top: 8%;
+        //             margin-left: 10%;
+        //         }
+            
+        //         @include mq($from: desktopXL){
+        //             margin-top: -2%;
+        //             margin-left: 0;
+        //         }
+                
+        //     }
+            width: 90px;
+            height: 84px;
+        }
+
+        &--desc-cont{
+            flex-basis: 100%;
+            // margin-top:-2%;
+
+            margin-left: 4%;
+
+            // @include mq($from: desktop, $until: desktopMid){
+            //     flex-basis:118%;
+            // }
+
+            // @include mq($from: desktopXL){
+            //     flex-basis: 85%;
+            // }
+
+            //Edge only 
+            @supports (-ms-ime-align:auto) {
+                margin-left: unset;
+                margin-top: -6px;
+            }
+
+            // //IE only
+            // @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            //     @include mq($from: desktop, $until: desktopMid){
+            //         margin-left: 11%;
+            //     }                
+            // }
+
+            &-top{
+
+                display: inline-flex;
+                width: 100%;
+
+                &--heading{
+                    font-family: EYInterstate-Bold, sans-serif;
+                    margin-left: 0;
+
+                    //Edge only 
+                    @supports (-ms-ime-align:auto) {
+                        @include mq($from: desktop, $until: desktopWide){
+                            @include fontSize(16px);
+                        }
+                    }
+
+                }
+
+                &--icon{
+                    padding: 2%;
+                    border-radius: 150%;
+                    position: absolute;
+                    right: 7px;
+                    top: 10px;
+                    color: $white;
+
+                    @include fontSize(12px);
+                }
+            }
+
+            &-bottom{
+
+                &--para{
+                    font-family: EYInterstate-Light, sans-serif;
+                    margin-top: .5rem;
+                    margin-bottom:0;
+                    @include fontSize(16px);
+                    line-height: 1.3;
+                    
+                    @include mq($from: tablet){
+                        @include fontSize(12px);
+                        margin-top:0;
+                    }
+    
+                     //Edge only 
+                     @supports (-ms-ime-align:auto) {
+    
+                        margin-top:-5px;
+                        // margin-bottom: 5px;
+                        @include fontSize(12px);
+
+                        @include mq($from: midMobile){
+                            margin-top: unset;
+                        }
+    
+                        @include mq($from: tablet){
+                            @include fontSize(14px);                            
+                        }
+
+                        @include mq($from: desktop){
+                            @include fontSize(12px);
+                            margin-top: -5px;
+                        }
+
+                        @include mq($from: desktopWide){
+                            @include fontSize(14px);
+                            margin-top: unset;
+                        }
+
+                        // @include mq($from: desktopXL){
+                        //     @include fontSize(18px);
+                        // }
+                    }
+
+                    //IE only
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        @include fontSize(14px);
+
+                        @include mq($from: desktop, $until: desktopWide){
+                            @include fontSize(12px);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .tip__tasx-team-contact{
+        &-section{
+            background-color: $eyOffBlack;
+            padding: 4%;
+
+            //Edge only        
+            @supports (-ms-ime-align:auto) { 
+                padding:2.5%;    
+            }
+        }
+
+        &-list {
+            font-family: EYInterstate-Light, sans-serif;
+            list-style: none;
+            padding: 0;
+            display: flex;
+
+            &--item{
+                background-color: $eyYellow;
+                border: 1px solid $eyYellow;
+                padding: 1% 2%;
+                border-radius: 5px;
+                width: fit-content;
+                margin-right: 3%;
+
+                @supports (-ms-ime-align:auto) {
+                    @include fontSize(16px);
+                }
+
+                //Edge only 
+                // @supports (-ms-ime-align:auto) {
+                //     padding: 1rem 2rem;
+                // }
+
+                &:hover{
+                    cursor: pointer;
+                    background-color: $eyOffBlack;
+                    .tip__tasx-team-contact-list--link{
+                        color: $eyYellow !important;
+                    }
+                }
+
+            }
+
+            &--link{
+                color: $eyOffBlack ; 
+            }
+        }
+    }
+}

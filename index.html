@@ -1,0 +1,90 @@
+<base href="siteUrl/">
+
+<!-- Custom Meta tag -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="siteUrl/SiteAssets/site-refresh-assets/assets/css/style.css" type="text/css"> 
+
+
+
+<div id="site__main-wrapper" ng-app="siteApp">
+    <header>
+        <div class="site__main-nav">
+            <div class="site__main-logo-cont">
+                <a ui-sref="home" title="" class="site__main-logo-link">
+                    <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/EY_Logo_Beam_Tag_Stacked_White_C_RGB_EN.png?csf=1&web=1&e=RXH7v9" alt="EY - Building a better working world" class="img-responsive site__main-logo"/>
+                </a>
+                <a ui-sref="home" class="site__main-title-link"> -->
+                    <!-- <i class="fa fa-home fa-3x ptp__home-icon" aria-hidden="true"></i> -->
+                    <h3 class="site__header-title">UKI site Portal</h3>
+                </a>                
+            </div>
+            <div class="site__ham-menu-cont" menu-popout>
+                <nav class="site__ham-menu-toggle-cont">
+                <a href="" class="site__ham-menu-toggle--tablet" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <div class="site__popout-menu">
+                    <ul class="site__main-nav-list">
+                        <li class="site__main-nav-listitem">
+                            <a ui-sref="site-area({siteArea: 'about-site'})" ui-sref-active="" class="site__main-nav-anchor">About site</a>
+                        </li>
+                        <li class="site__main-nav-listitem">
+                            <a ui-sref="teams-area({teamsArea: 'leadership-teams'})" ui-sref-active="" class="site__main-nav-anchor">Our Leadership Teams</a>
+                        </li>
+                        <li class="site__main-nav-listitem">
+                            <a ui-sref="teams-area({teamsArea: 'teams'})" ui-sref-active="" class="site__main-nav-anchor">Our Teams & Specialisms</a>
+                        </li>
+                        <li class="site__main-nav-listitem">
+                            <a ui-sref="site-area({siteArea: 'site-communities'})" ui-sref-active="" class="site__main-nav-anchor">site Communities</a>
+                        </li>
+                        <li class="site__main-nav-listitem">
+                            <a ui-sref="site-area({siteArea: 'mercury-and-me'})" ui-sref-active="" class="site__main-nav-anchor">Mercury and Me</a>
+                        </li>
+                        <li class="site__main-nav-listitem">
+                            <a ui-sref="site-ref-doc({refDoc: 'financial-ref-docs'})" ui-sref-active="" class="site__main-nav-anchor">site Reference Doc</a>
+                        </li>
+                    </ul>
+                </div> 
+                </nav>
+            </div>      
+        </div>
+    </header>
+	<main class="site__main-wrapper">
+		<ui-view></ui-view>
+    </main>
+    <!-- Vendors -->
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/vendors/angular.min.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/vendors/angular-animate.js"></script>	
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/vendors/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/vendors/jquery.min.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/vendors/popper.min.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/vendors/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/7afb12a081.js?001"></script>
+
+    <!-- App -->
+	<script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/app.js"></script>
+
+	<!-- Factories -->
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/factory/pageIntroFactory.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/factory/financialRefDocFactory.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/factory/tabContentFactory.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/factory/teamsFactory.js"></script>
+    <script src="siteUrl/SiteAssets/test-site-refresh-assets/assets/js/factory/quickLinksFactory.js"></script>
+
+    <!-- Controllers -->
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/controllers/homeCtrl.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/controllers/siteAreaCtrl.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/controllers/siteRefCtrl.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/controllers/teamsAreaCtrl.js"></script>
+
+
+    <!-- Directives -->
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/directives/menuDir.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/directives/variousDir.js"></script>
+    <script src="siteUrl/SiteAssets/site-refresh-assets/assets/js/directives/popupDir.js"></script>
+</div>

@@ -1,0 +1,47 @@
+<div class="site__area-wrapper" ng-controller="siteAreaCtrl">
+    <section class="site__area-hero-section" ng-style="{'background-image': 'url(' + pageData.Page_x002d_Hero_x002d_Banner.Url + ')'}">
+        <div class="site__area-hero-heading-cont" ng-class="pageData.Colour_x002d_Background">
+            <h3 class="site__area-hero-header">{{pageData.Title}}</h3>
+        </div>
+        <a ui-sref="home" class="site__area-home-link" data-bg="{{pageData.Colour_x002d_Background}}" icon-hover>
+                <img src="siteUrl/SiteAssets/site-refresh-assets/assets/img/Home-Button.svg" alt="home-icon" class="site__area-home-icon">           
+                <p class="site__area-home-link-para">Home page</p>
+        </a>
+    </section>
+    <section class="site__area-tab-section">
+        <div class="site__area-tab-section-mobile">
+            <div class="accordion" id="siteTabAccordion">
+                <div class="card site__area-accordion-card" ng-repeat="tabContent in tabContentArr">
+                  <div class="card-header site__area-card-header" id="heading{{tabContent.ID}}">
+                    <h3 class="mb-0 site__area-accordion-header">
+                      <a class="btn btn-link btn-block text-left site_area-accordion-link" type="button" data-toggle="collapse" data-target="#collapse{{tabContent.ID}}" aria-expanded="true" aria-controls="collapse{{tabContent.ID}}">
+                        {{tabContent.Title}}
+                      </a>
+                    </h3>
+                  </div>              
+                  <div id="collapse{{tabContent.ID}}" class="collapse show" aria-labelledby="heading{{tabContent.ID}}" data-parent="#siteTabAccordion">
+                    <div class="card-body site__are-accordion-card-body" ng-bind-html="tabContent.Description">
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="site__area-tab-section-desktop">
+            <div class="site__area-tab-left-cont"> 
+                <ul class="nav site__area-tab-list" role="tab-list" tab-clicked>  
+                    <li class="nav-item site__area-tab-list--item" ng-repeat="tabContent in tabContentArr">
+                        <a href="#tab-content-{{tabContent.ID}}" class="site__area-tab-link nav-link active" data-toggle="tab">{{tabContent.Title}}</a>
+                    </li>
+                </ul>               
+            </div>           
+            <div id="tab-content" class="site__area-tab-content tab-content slide-left">
+            <div class="site__area-tab-pane tab-pane fade show" ng-repeat="tabContent in tabContentArr" id="tab-content-{{tabContent.ID}}" show-pane>
+              <div class="site__tab-pane-cont">
+                <h3 class="site__area-tab-pane-header">{{tabContent.Title}}</h3>
+                <div class="site__area-tap-pane-para" ng-bind-html="tabContent.Description"></div>
+              </div>                
+            </div>
+            </div>
+        </div>         
+    </section>
+</div>

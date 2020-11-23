@@ -1,0 +1,54 @@
+/**
+ * EY - UKI&I Tas Innovation - Custom styles
+ *
+ * @author: CSG
+ * @version v0.0.1
+ */
+
+
+ $mq-responsive: true;
+
+ $mq-breakpoints: (
+     mobile:  320px,
+     midMobile: 480px,
+     tablet:  740px,
+     desktop: 	980px,
+     desktopMid:    1135px,
+     desktopWide:    1400px,
+     desktopXL:    1800px
+ );
+ 
+ $mq-static-breakpoint: desktop;
+ //$mq-show-breakpoints: (mobile, midMobile, tablet, desktop, desktopMid, desktopWide, desktopXL); 
+ 
+ //Third Party 
+ @import '_third-party/_sass-mq';
+ @import '_third-party/_normalize';
+ @import '_third-party/_bootstrap-4';
+ @import '_third-party/_sharepoint';
+  
+ //Tools 
+ @import '_tools/_helpers';
+ @import '_tools/_variables.scss';
+ @import '_tools/_mixins';
+ 
+ //Base 
+ @import '_base/_base';
+ @import '_base/_typography';
+ 
+ 
+ //Elements
+ @import '_elements/_navAnimation';
+ @import '_elements/_header';
+ @import '_elements/_home';
+ @import '_elements/_financeArea';
+ @import '_elements/_teamsArea';
+ @import '_elements/_financeDocRef';
+  
+ // Print Stylesheets
+ @media print {
+     @import '_media/_print';
+ }
+ 
+ 
+ 

@@ -1,0 +1,256 @@
+.site__area-wrapper{
+
+    .site__area-hero-section{
+        position: relative;
+        // background-image: url(https://sites.ey.com/sites/UKIsite/SiteAssets/site-refresh-assets/assets/img/about-site-hero.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; 
+        height: 13rem; 
+        width: 100%;
+
+        @include mq($from: desktop){
+            height: 24rem;
+        }
+    }
+
+    .site__area-hero-heading-cont{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 19rem;        
+        height: 8rem;        
+        padding: 0 2rem;
+        display: flex;
+        align-items: center; 
+
+        @include mq($from: desktop){
+            height: 11rem;
+            padding: 0 2.5rem;
+        }
+    }
+
+    .site__area-hero-header{
+        font-family: EYInterstate-Light, sans-serif;
+        width: 90%;
+        margin: auto;
+    }
+
+    .site__area-home-link{ 
+        display: none;
+
+        @include mq($from : desktop){
+            position: absolute;
+            left: 0; 
+            bottom: 0;
+            width: 160px; 
+            height: 33px;
+            display: flex;
+    
+            &:hover{    
+               
+                .site__area-home-link-para{
+                    animation: animateHomePara 1s;
+                    animation-timing-function: ease-in;
+                    animation-fill-mode: forwards;
+                }
+    
+                // .site__area-home-icon{
+                //     background-color: $eyYellow; 
+                // }
+            } 
+        }        
+    }
+    
+    .site__area-home-icon{
+        position: absolute;
+        bottom: 0;
+        z-index: 30;
+        width: 37px;
+        background-color: $white;
+        transition: 2s;
+    } 
+
+    .site__area-home-link-para{
+        opacity: 0;
+        width: 0;
+        height: 0;
+        background-color: $eyOffBlack;
+        color: $white;
+        padding: 10px 20px 40px 50px;
+        // transition: .6s;
+    }
+
+    @keyframes animateHomePara {
+        0%{
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        50%{
+            opacity: 0; 
+            width: 160px;
+            height: 16px;
+        }
+
+        100%{
+            opacity: 1;
+            width: 160px;
+            height: 33px;
+        }
+    }
+
+    .site__area-tab-section{
+        width: 100%;
+        display: block;
+
+        @include mq($from: tablet){
+            display: flex;
+        }
+    }
+
+    .site__area-tab-section-mobile{
+        display: block;
+        width: 100%;
+        margin: auto;
+
+        @include mq($from: desktop){
+            display: none;
+        }
+    }
+
+    .site__area-tab-section-desktop{
+        display: none;
+
+        @include mq($from: desktop){
+            display: flex;
+            width: 100%;
+        }
+    }
+
+    .site__area-accordion-card{
+        border: none;
+    }
+
+    .site__area-card-header{
+        background-color: $eyOffWhite;
+        border-bottom: 1px solid $eySharkGrey;
+    }
+
+    .site__are-accordion-card-body{
+        font-family: EYInterstate-light, sans-serif;
+        padding: 1.5rem 2rem;
+    }
+
+    .site_area-accordion-link{
+        color: $eySharkGrey !important;
+        @include fontSize(20px);
+        font-family: EYInterstate-Bold, sans-serif;
+
+        @include mq($from: desktop){
+            font-family: EYInterstate-Regular, sans-serif;
+        }
+    }
+
+    .site__area-tab-left-cont{
+        flex-basis: 100%;
+        background-color: $eyPrimaryGray;
+
+        @include mq($from: tablet){
+            // flex-basis: 25%;
+            width: 19rem;
+            flex-basis: 19rem;
+            min-height: 31rem;
+        }   
+    }
+
+    .site__area-tab-list{
+        display: block;
+        background-color: $eyOffWhite;
+        padding: 3rem 2.5rem 8rem 2.5rem;
+        &--item{
+            color: $eySharkGrey !important;
+            font-family: EYInterstate-Light, sans-serif;
+            padding-bottom: .5rem;
+            &:not(:first-child){
+                padding-top: .5rem;
+            } 
+            &:not(:last-child){
+                border-bottom: 1px solid $eySharkGrey;
+            }
+        } 
+    }
+
+    .site__area-tab-link{
+        width: 100%;
+        padding: 0;
+        @include fontSize(18px);
+        transition: .6s;
+
+        &:hover{
+            font-size: 20px !important;
+            font-family: EYInterstate-Bold, sans-serif !important;
+        }
+    } 
+
+    .site__area-tab-content{
+        flex-basis: 100%;
+        background-color: $white;
+        padding: 3rem 2.5rem;
+        text-align: justify;
+
+        @include mq($from: tablet){
+            flex-basis: 75%;
+            width: 75vw;
+            position: relative;
+        }
+    }
+
+    
+
+    .site__area-wrapper .tab-content > .site__area-tab-pane {
+        padding-right: 4rem;
+        position: absolute;
+        width: 95%;
+    }
+    
+    .slide-left{
+        animation: slideLeft .7s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+    }
+  
+
+    @keyframes slideLeft {
+        0%{
+            opacity: 0;
+            right: -100%;
+        }
+
+        100%{
+            opacity: 1;
+            right: 0;
+        }    
+    }
+
+    .site__area-tap-pane-para{
+        font-family: EYInterstate-Light, sans-serif;
+
+        a{
+            font-family: EYInterstate-Bold, sans-serif
+        }
+
+        // img{
+        //     margin: 50px;
+        //     width: 390px;
+        // }
+    }
+
+    .site__area-tab-pane-header{
+        margin-bottom: 1.5rem;
+        color: $eyOffBlack;
+    }
+}
+
+        

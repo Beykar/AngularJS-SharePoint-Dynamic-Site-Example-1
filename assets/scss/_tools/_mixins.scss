@@ -1,0 +1,77 @@
+/* Mixins
+   ========================================================================== */
+
+// Usage:: @include fontSize(--px);
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+  }
+  
+  @mixin fontSize($size) {
+    font-size: $size; //Fallback in px
+    font-size: calculateRem($size);
+  }
+  
+  //Usage:: @include css3-prefix(*transform*, *scale3d(2.5, 2, 1.5)*);
+  
+  @mixin css3-prefix($prop, $value) {
+     -webkit-#{$prop}: #{$value};
+     -moz-#{$prop}: #{$value};
+     -ms-#{$prop}: #{$value};
+     -o-#{$prop}: #{$value};
+     #{$prop}: #{$value};
+  }
+  
+  //Usage:: @include vertical-center();
+  
+  @mixin vertical-center {
+     position: relative;
+     top: 50%;
+     -ms-transform: translateY(-50%);
+     -webkit-transform: translateY(-50%);
+     transform: translateY(-50%);
+  }
+  
+  //Usage:: @include transition(color .3s ease);
+  
+  @mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
+  
+  //Usage:: @include opacity(0.8);
+  
+  @mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+  }
+  
+  //Usage:: @include border-radius(5px);
+  
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+  
+  @mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+  }
+  
+  @mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -moz-transform: rotate($degrees);
+    -ms-transform: rotate($degrees);
+    -o-transform: rotate($degrees);
+    transform: rotate($degrees);
+  }
